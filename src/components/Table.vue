@@ -62,12 +62,8 @@ export default {
       }
     },
 
-    async removeEvent (eventDate) {
-      // mock server request
-      await Promise.resolve()
-
+    removeEvent (eventDate) {
       this.idRemoveItem = eventDate
-
       this.showAlert = true
     },
 
@@ -77,6 +73,8 @@ export default {
 
       const removeIndex = this.tableData.findIndex(t => t.create_date === this.idRemoveItem)
       this.tableData.splice(removeIndex, 1)
+
+      this.idRemoveItem = null
     }
   },
 
